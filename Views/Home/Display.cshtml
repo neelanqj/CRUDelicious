@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Display";
+}
+
+<div class="row">
+    <div class="span12">
+        <a href="/">Home</a>
+        <hr/>
+    </div>
+</div>
+
+<div class="row">
+     <div class="span12">
+         <h1>@Model.Name</h1>
+         @Model.Chef
+         <hr/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        @Model.Description
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <br/><br/>
+        <b>Calories: </b>@Model.Calories
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <b>Tastiness: </b>@Model.Tastiness
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <a class="btn btn-danger" href="/delete/@Model.DishId">Delete</a>
+        <a class="btn btn-default" href="/edit/@Model.DishId">Edit</a>
+    </div>
+</div>

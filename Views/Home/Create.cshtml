@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+     <div class="span12">
+         <h1>Add a new Dish!</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <a href="/">Home</a>
+        <hr/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <p>@Html.ValidationSummary()</p>
+    </div>
+</div>
+
+<form action="/new" method="POST">
+    <div class="row">
+        <div class="col-md-4">
+            Chef's Name<br/>
+            <input name="Chef" type="text"><br/><br/>
+            Name of Dish<br/>
+            <input name="Name" type="text"><br/><br/>
+            # of Calories<br/>
+            <input name="Calories" type="text">
+        </div>
+        <div class="col-md-4">
+            Tastiness<br/>
+            <select name="Tastiness">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            Description<br/>
+            <textarea name="Description" rows="10" cols="50"></textarea>
+            <br/>
+            <input type="submit" value="Add Dish" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="row">
+     <div class="span12">
+         <h1>Edit @Model.Name</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="span12">
+        <a href="/">Home</a>
+        <hr/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <p>@Html.ValidationSummary()</p>
+    </div>
+</div>
+
+@model Dish
+<form action="/edit" method="POST">
+    <div class="row">
+        <div class="col-md-4">
+            <input type="hidden" name="DishId" value="@Model.DishId" />
+            Chef's Name<br/>
+            <input asp-for="Chef"/><br/><br/>
+            Name of Dish<br/>
+            <input asp-for="Name" /><br/><br/>
+            # of Calories<br/>
+            <input asp-for="Calories" />
+        </div>
+        <div class="col-md-4">
+            Tastiness<br/>
+            <select asp-for="Tastiness">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>                
+            </select>
+        </div>
+        <div class="col-md-4">
+            Description<br/>
+            <textarea asp-for="Calories" rows="10" cols="50"></textarea>
+            <br/>
+            <input type="submit" value="Edit Dish" />
+        </div>
+    </div>
+</form>
